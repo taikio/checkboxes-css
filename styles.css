@@ -1,0 +1,123 @@
+body {
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+  background-color: #ec6b97;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.wrapper section {
+  margin-bottom: 40px;
+}
+
+/* Checkbox */
+#checkbox {
+  display: none;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.4px;
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.checkbox-label::before {
+  content: '';
+  display: block;
+  height: 3rem;
+  width: 3rem;
+  box-sizing: border-box;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  margin-right: 10px;
+  background-color: #fff;
+  background-image: none;
+  background-repeat: no-repeat;
+  background-position: center center;
+  transition: .3s ease-in-out;
+}
+
+#checkbox:checked + .checkbox-label::before {
+  background-color: #07bdac;
+  background-image: url("data:image/svg+xml,%3Csvg height='50' viewBox='0 0 512 512' width='50' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m512 58.667969c0-32.363281-26.304688-58.667969-58.667969-58.667969h-394.664062c-32.363281 0-58.667969 26.304688-58.667969 58.667969v394.664062c0 32.363281 26.304688 58.667969 58.667969 58.667969h394.664062c32.363281 0 58.667969-26.304688 58.667969-58.667969zm0 0' fill='%234caf50'/%3E%3Cpath d='m385.75 171.585938c8.339844 8.339843 8.339844 21.820312 0 30.164062l-138.667969 138.664062c-4.160156 4.160157-9.621093 6.253907-15.082031 6.253907s-10.921875-2.09375-15.082031-6.253907l-69.332031-69.332031c-8.34375-8.339843-8.34375-21.824219 0-30.164062 8.339843-8.34375 21.820312-8.34375 30.164062 0l54.25 54.25 123.585938-123.582031c8.339843-8.34375 21.820312-8.34375 30.164062 0zm0 0' fill='%23fafafa'/%3E%3C/svg%3E");
+}
+
+/* Toggle Switch */
+.power-button {
+  width: 6.8rem;
+  height: 3rem;
+  background-color: #dedede;
+  border-radius: 32px;
+}
+
+#powerbutton {
+  display: none;
+}
+
+.toggle {
+  width: 3rem;
+  height: 3rem;
+  display: block;
+  cursor: pointer;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: #fcfff4;
+  border: 1px solid #dedede;
+  border-radius: 32px;
+  box-shadow: none;
+  box-sizing: border-box;
+  transition: .3s cubic-bezier(0.895, 0.07, 0.685, 0.68);
+}
+
+.toggle::before {
+  content: 'On';
+  color: #fff;
+  position: absolute;
+  text-transform: uppercase;
+  font-size: 0;
+  top: 14px;
+  left: 12px;
+}
+
+.toggle::after {
+  content: 'Off';
+  color: rgb(153, 153, 153);
+  position: absolute;
+  text-transform: uppercase;
+  font-size: 14px;
+  top: 14px;
+  left: 10px;
+}
+
+/* muda a bolinha da esquerda para a direita */
+#powerbutton:checked + .toggle {
+  left: 3.7rem;
+  background-color: #07bdac;
+}
+
+/* some com o texto OFF */
+#powerbutton:checked + .toggle::before {
+  font-size: 14px;
+}
+
+/* exibe o texto ON */
+#powerbutton:checked + .toggle::after {
+  font-size: 0;
+}
